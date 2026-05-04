@@ -236,11 +236,45 @@
 
 <!-- POPUP PENDAFTARAN -->
 <div class="popup-overlay" id="popup-overlay" onclick="tutupPopup()"></div>
-<div class="popup-box" id="popup-box">
-  <div class="popup-icon">📋</div>
-  <div class="popup-title">Pendaftaran Belum Dibuka</div>
-  <p class="popup-desc">Formulir pendaftaran online belum tersedia saat ini atau sudah ditutup. Silakan hubungi pihak sekolah untuk informasi lebih lanjut.</p>
-  <button class="popup-btn" onclick="tutupPopup()">Oke, Mengerti</button>
+<div class="popup-box" id="popup-box" style="max-width:420px;">
+  <div class="popup-icon">📝</div>
+  <div class="popup-title">Pilih Jalur Pendaftaran</div>
+  <p class="popup-desc" style="margin-bottom:1.25rem">Pilih jalur pendaftaran SMP yang sesuai:</p>
+
+  <!-- Jalur Domisili -->
+  <div style="background:white;border:1px solid rgba(192,133,82,.2);border-radius:12px;padding:1rem 1.25rem;margin-bottom:.75rem;text-align:left;">
+    <div style="font-weight:600;font-size:.88rem;color:var(--dark);margin-bottom:.25rem">🏠 Jalur Domisili</div>
+    <div style="font-size:.78rem;color:var(--soft);margin-bottom:.6rem">Berdasarkan domisili / zona tempat tinggal</div>
+    <div style="display:flex;gap:.5rem;flex-wrap:wrap;">
+      <button onclick="bukaLink(LINK_PENDAFTARAN.domisili, 'Jalur Domisili')" style="flex:1;padding:.5rem .75rem;border-radius:8px;border:none;font-size:.78rem;font-weight:600;cursor:pointer;background:var(--dark);color:var(--cream);transition:.2s" onmouseover="this.style.background='var(--brown)'" onmouseout="this.style.background='var(--dark)'">Daftar Sekarang</button>
+      <button onclick="window.open(LINK_PENDAFTARAN.domisili_sim,'_blank')" style="flex:1;padding:.5rem .75rem;border-radius:8px;border:1px solid rgba(192,133,82,.4);font-size:.78rem;font-weight:600;cursor:pointer;background:transparent;color:var(--brown);transition:.2s" onmouseover="this.style.background='var(--gold-pale)'" onmouseout="this.style.background='transparent'">Cek Simulasi</button>
+    </div>
+  </div>
+
+  <!-- Jalur Olahraga -->
+  <div style="background:white;border:1px solid rgba(192,133,82,.2);border-radius:12px;padding:1rem 1.25rem;margin-bottom:.75rem;text-align:left;">
+    <div style="font-weight:600;font-size:.88rem;color:var(--dark);margin-bottom:.25rem">⚽ Jalur Kelas Khusus Olahraga</div>
+    <div style="font-size:.78rem;color:var(--soft);margin-bottom:.6rem">Kelas khusus bakat olahraga (KKO)</div>
+    <button onclick="bukaLink(LINK_PENDAFTARAN.olahraga, 'Jalur Kelas Khusus Olahraga')" style="width:100%;padding:.5rem .75rem;border-radius:8px;border:none;font-size:.78rem;font-weight:600;cursor:pointer;background:var(--dark);color:var(--cream);transition:.2s" onmouseover="this.style.background='var(--brown)'" onmouseout="this.style.background='var(--dark)'">Daftar Sekarang</button>
+  </div>
+
+  <!-- Jalur Seni Budaya -->
+  <div style="background:white;border:1px solid rgba(192,133,82,.2);border-radius:12px;padding:1rem 1.25rem;margin-bottom:1.25rem;text-align:left;">
+    <div style="font-weight:600;font-size:.88rem;color:var(--dark);margin-bottom:.25rem">🎨 Jalur Kelas Khusus Seni Budaya</div>
+    <div style="font-size:.78rem;color:var(--soft);margin-bottom:.6rem">Kelas khusus bakat seni budaya (KKSB)</div>
+    <button onclick="bukaLink(LINK_PENDAFTARAN.seni, 'Jalur Kelas Khusus Seni Budaya')" style="width:100%;padding:.5rem .75rem;border-radius:8px;border:none;font-size:.78rem;font-weight:600;cursor:pointer;background:var(--dark);color:var(--cream);transition:.2s" onmouseover="this.style.background='var(--brown)'" onmouseout="this.style.background='var(--dark)'">Daftar Sekarang</button>
+  </div>
+
+  <button class="popup-btn" onclick="tutupPopup()" style="width:100%">Tutup</button>
+</div>
+
+<!-- POPUP JALUR BELUM DIBUKA -->
+<div class="popup-overlay" id="popup-overlay2" onclick="tutupPopup2()"></div>
+<div class="popup-box" id="popup-box2">
+  <div class="popup-icon">🔒</div>
+  <div class="popup-title" id="popup-box2-title">Belum Dibuka</div>
+  <p class="popup-desc">Pendaftaran untuk jalur ini belum dibuka atau sudah ditutup. Silakan hubungi pihak sekolah untuk informasi lebih lanjut.</p>
+  <button class="popup-btn" onclick="tutupPopup2()">Oke, Mengerti</button>
 </div>
 
 
@@ -389,24 +423,33 @@
 
 <script>
   // ════════════════════════════════════════════════
-  // LINK PENDAFTARAN
-  // Ada link → langsung redirect ke link tersebut
-  // Kosong (null) → muncul popup "belum dibuka"
+  // LINK PENDAFTARAN — update di sini kalau ada link baru
+  // null = belum dibuka | isi link = aktif
   // ════════════════════════════════════════════════
-  const LINK_PENDAFTARAN = null;
-  // Contoh kalau ada link:
-  // const LINK_PENDAFTARAN = "https://ppdb.sidoarjokab.go.id/...";
+  const LINK_PENDAFTARAN = {
+    domisili:     null,
+    domisili_sim: "https://smp-spmbsidoarjo.id/pendaftaran/input_uasbn_smp/",
+    olahraga:     "https://smp-spmbsidoarjo.id/pendaftaran/input_uasbn_smp/kko",
+    seni:         "https://smp-spmbsidoarjo.id/pendaftaran/input_uasbn_smp/kksb",
+  };
 
   // ════════════════════════════════════════════════
   // JANGAN EDIT DI BAWAH INI
   // ════════════════════════════════════════════════
 
   function bukaPendaftaran() {
-    if (LINK_PENDAFTARAN) {
-      window.open(LINK_PENDAFTARAN, '_blank');
+    document.getElementById('popup-overlay').classList.add('show');
+    document.getElementById('popup-box').classList.add('show');
+  }
+
+  function bukaLink(link, namaJalur) {
+    if (link) {
+      window.open(link, '_blank');
     } else {
-      document.getElementById('popup-overlay').classList.add('show');
-      document.getElementById('popup-box').classList.add('show');
+      tutupPopup();
+      document.getElementById('popup-box2-title').textContent = namaJalur + ' Belum Dibuka';
+      document.getElementById('popup-overlay2').classList.add('show');
+      document.getElementById('popup-box2').classList.add('show');
     }
   }
 
@@ -415,7 +458,14 @@
     document.getElementById('popup-box').classList.remove('show');
   }
 
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') tutupPopup(); });
+  function tutupPopup2() {
+    document.getElementById('popup-overlay2').classList.remove('show');
+    document.getElementById('popup-box2').classList.remove('show');
+  }
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') { tutupPopup(); tutupPopup2(); }
+  });
 
   document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.yr-f').forEach(el => el.textContent = new Date().getFullYear());
