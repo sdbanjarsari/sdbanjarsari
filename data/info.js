@@ -13,7 +13,7 @@ const INFO_SEKOLAH = {
   kode_pos:     "61252",
   telp:         "-",                         // isi nomor telepon/WA
   email:        "sdnbanjarsari55@gmail.com",                         // isi email sekolah
-  tahun_berdiri:"1970",                         // isi tahun berdiri
+  tahun_berdiri:"1982",                         // isi tahun berdiri
   akreditasi:   "B",                        // isi akreditasi: A / B / C
   status:       "Negeri",
 };
@@ -45,8 +45,8 @@ const PENGUMUMAN = [
   },
   {
     tanggal: "15 Jun",
-    judul:   "Prediksi Pengumuman Kenaikan Kelas",
-    isi:     "Hasil keputusan kenaikan kelas tahun ajaran 2025/2026 akan ditetapkan. Hubungi wali kelas masing-masing.",
+    judul:   "Pengumuman Kenaikan Kelas",
+    isi:     "Hasil keputusan kenaikan kelas tahun ajaran 2025/2026. Hubungi wali kelas masing-masing.",
   },
   {
     tanggal: "10 Jun",
