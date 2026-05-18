@@ -49,7 +49,7 @@ const PENGUMUMAN = [
     isi:     "Hasil seleksi penerimaan peserta didik baru akan diumumkan pada 2 Juli 2026 pukul 14.00 WIB.",
   },
   {
-    tanggal: "3 - 5 Juli 2026",
+    tanggal: "3-5 Juli 2026",
     judul:   "Daftar Ulang Peserta Didik Baru",
     isi:     "Calon siswa yang telah dinyatakan diterima wajib melakukan daftar ulang pada 3–5 Juli 2026. Pastikan membawa berkas yang diperlukan agar status penerimaan tetap sah.",
   },
