@@ -38,7 +38,6 @@ const SEJARAH =
 // Tambah / hapus pengumuman di sini.
 // Format: { tanggal: "DD Mon", judul, isi }
 const PENGUMUMAN = [
- [
   {
     tanggal: "25 Juni - 01 Juli 2026",
     judul:   "Penerimaan Peserta Didik Baru (PPDB) 2026/2027",
