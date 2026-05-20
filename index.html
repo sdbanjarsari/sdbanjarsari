@@ -475,8 +475,12 @@
       // Kalau ada field foto dan tidak kosong → tampilkan foto
       // Kalau tidak ada atau kosong → tampilkan inisial
       const avatar = (g.foto && g.foto.trim() !== '')
-        ? `<div class="guru-foto-wrap"><img class="guru-foto" src="${g.foto}" alt="${g.nama}" onerror="this.parentElement.outerHTML='<div class=\\"guru-av\\">${init}</div>'"></div>`
-        : `<div class="guru-av">${init}</div>`;
+  ? `<div class="guru-foto-wrap">
+       <img class="guru-foto" src="${g.foto}" alt="${g.nama}"
+            onerror="this.parentElement.outerHTML='<div class=\\\"guru-av\\\">${init}</div>'">
+     </div>`
+  : `<div class="guru-av">${init}</div>`;
+
 
       return `<div class="guru-card">
         ${avatar}
