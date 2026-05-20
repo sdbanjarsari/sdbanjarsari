@@ -20,7 +20,7 @@ const GURU = [
   { nama: "Yuyun Ayyuma, S.PdI",         jabatan: "Guru Agama Islam"},
   { nama: "Fita Malviana, S.Pd ",        jabatan: "Guru Olahraga"  },
   { nama: "Wisnu Kawirian, S.Pd",        jabatan: "Guru BTQ"  },
-  { nama: "Ulya Faroha, S.Pd ",        jabatan: "Guru Bahasa Inggris"  },
+  { nama: "Ulya Faroha, S.Pd ",        jabatan: "Guru Bahasa Inggris", foto: "data/foto-guru/patrick.jpg"  },
   { nama: "SUTIKNO",        jabatan: "Penjaga Sekolah"  },
   // Tambah baris baru di sini kalau ada guru/staff baru:
   // { nama: "Nama Guru Baru", jabatan: "Jabatannya" },
