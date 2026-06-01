@@ -59,12 +59,12 @@ const PENGUMUMAN = [
   isi:     "Surat Keterangan Lulus (SKL) untuk siswa kelas 6 akan dibagikan pada 2 Juni 2026. Dokumen ini wajib dibawa untuk proses pendaftaran ke jenjang berikutnya.",
    },
   {
-    tanggal: "15 Jun",
-    judul:   "Pengumuman Kenaikan Kelas",
-    isi:     "Hasil keputusan kenaikan kelas tahun ajaran 2025/2026. Hubungi wali kelas masing-masing.",
+    tanggal: "10 Jun",
+    judul:   "Pengumuman Kelulusan Kelas 6",
+    isi:     "Hasil keputusan kelulusan siswa kelas tahun ajaran 2025/2026.",
   },
   {
-    tanggal: "10 Jun",
+    tanggal: "13 Jun",
     judul:   "Pelepasan Siswa Kelas 6",
     isi:     "Teruntuk seluruh siswa kelas 6 yang telah menyelesaikan pendidikan di SDN Banjarsari!",
   },
