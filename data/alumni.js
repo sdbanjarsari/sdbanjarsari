@@ -19,11 +19,6 @@
 const ALUMNI = [
 
   // ── ANGKATAN 2025 ─────────────────────────────────
-  { nama: "nama saya Raib",  tahun: 2002, smp: "SMP Negeri 1 Buduran",  prestasi: ["Juara 1 Olimpiade Matematika Kecamatan", "Siswa Teladan 2024"] },
-  { nama: "Siti mungkin namanya",     tahun: 2002, smp: "SMP Negeri 2 Sidoarjo", prestasi: ["Juara 2 Lomba Baca Puisi Kabupaten"] },
-  { nama: "Bayu taajudin setyo paratama",    tahun: 2012, smp: "MTs Dagestan",        prestasi: ["juara 1 bela diri anak"] },
-  { nama: "andi firmansyah", tahun: 2010, smp: "Gulag", prestasi: ["tinju berat"] },
-  { nama: "Vyodor", tahun: 2010, smp: "Gutenberg ", prestasi: ["renang lintas samudra"] },
-  { nama: "Yoda", tahun: 2010, smp: "Mars", prestasi: [] },
+{ nama: "...", nipd: "...", nisn: "...", tahun: 2025, keterangan: "...", smp: "..." }
   // Tambah angkatan baru di atas baris ini 👆
 ];
