@@ -4,18 +4,9 @@
 // ╚══════════════════════════════════════════════════╝
 
 // FORMAT setiap alumni:
-// { nama, tahun, smp, prestasi: [] }
+// { nama: "...", nipd: "...", nisn: "...", tahun: 2025, keterangan: "...", smp: "..." }
 //
-// - tahun    : tahun lulus (angka, bukan teks)
-// - smp      : nama SMP/MTs tujuan
-// - prestasi : daftar prestasi. Kosongkan dengan [] kalau tidak ada.
-//
-// Contoh dengan prestasi:
-// { nama: "Budi Santoso", tahun: 2025, smp: "SMP Negeri 1 Buduran", prestasi: ["Juara 1 Olimpiade Matematika"] },
-//
-// Contoh tanpa prestasi:
-// { nama: "Siti Aminah", tahun: 2025, smp: "MTs Al-Hidayah", prestasi: [] },
-
+// format bisa ganti-ganti... dan itu berat :C
 const ALUMNI = [
 
   // ── ANGKATAN 2025 ─────────────────────────────────
