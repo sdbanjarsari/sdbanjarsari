@@ -530,16 +530,13 @@
       </div>`;
       return;
     }
-    grid.innerHTML = f.map(a => `
-      <div class="al-card">
-        <div class="al-yr">Lulus ${a.tahun}</div>
-        <div class="al-name">${a.nama}</div>
-        <div class="al-smp">
-          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
-          ${a.smp}
-        </div>
-        ${a.prestasi.length ? `<div class="al-prest">${a.prestasi.map(p => `<span class="prest-tag">🏅 ${p}</span>`).join('')}</div>` : ''}
-      </div>`).join('');
+   grid.innerHTML = f.map(a => `
+  <div class="al-card">
+    <div class="al-yr">Lulus ${a.tahun}</div>
+    <div class="al-name">${a.nama}</div>
+    <div class="al-smp">...${a.smp}</div>
+    ${a.prestasi.length ? ... : ''}
+  </div>`).join('');
   }
 </script>
 </body>
