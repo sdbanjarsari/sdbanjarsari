@@ -39,6 +39,16 @@ const SEJARAH =
 // Format: { tanggal: "DD Mon", judul, isi }
 const PENGUMUMAN = [
   {
+    tanggal: "10 Juni 2026",
+    judul:   "Pengumuman Kelulusan Kelas 6",
+    isi:     "Hasil keputusan kelulusan siswa kelas tahun ajaran 2025/2026.",
+  },
+  {
+    tanggal: "13 Juni 2026",
+    judul:   "Pelepasan Siswa Kelas 6",
+    isi:     "Teruntuk seluruh siswa kelas 6 yang telah menyelesaikan pendidikan di SDN Banjarsari!",
+  },
+  {
     tanggal: "25 Juni - 01 Juli 2026",
     judul:   "Penerimaan Peserta Didik Baru (PPDB) 2026/2027",
     isi:     "Pendaftaran siswa baru untuk tahun ajaran 2026/2027 dibuka mulai 25 Juni hingga 1 Juli 2026. Segera persiapkan berkas pendaftaran anak Anda!",
@@ -52,20 +62,5 @@ const PENGUMUMAN = [
     tanggal: "3 Juli 2026",
     judul:   "Daftar Ulang Peserta Didik Baru",
     isi:     "Calon siswa yang telah dinyatakan diterima wajib melakukan daftar ulang pada 3–5 Juli 2026. Pastikan membawa berkas yang diperlukan agar status penerimaan tetap sah.",
-  },
-   {
-  tanggal: "2 Juni 2026",
-  judul:   "Pembagian SKL Kelas 6",
-  isi:     "Surat Keterangan Lulus (SKL) untuk siswa kelas 6 akan dibagikan pada 2 Juni 2026. Dokumen ini wajib dibawa untuk proses pendaftaran ke jenjang berikutnya.",
-   },
-  {
-    tanggal: "10 Jun",
-    judul:   "Pengumuman Kelulusan Kelas 6",
-    isi:     "Hasil keputusan kelulusan siswa kelas tahun ajaran 2025/2026.",
-  },
-  {
-    tanggal: "13 Jun",
-    judul:   "Pelepasan Siswa Kelas 6",
-    isi:     "Teruntuk seluruh siswa kelas 6 yang telah menyelesaikan pendidikan di SDN Banjarsari!",
   },
 ];
