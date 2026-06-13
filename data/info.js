@@ -14,7 +14,7 @@ const INFO_SEKOLAH = {
   telp:         "-",                         // isi nomor telepon/WA
   email:        "sdnbanjarsari55@gmail.com",                         // isi email sekolah
   tahun_berdiri:"1982",                         // isi tahun berdiri
-  akreditasi:   "B",                        // isi akreditasi: A / B / C
+  akreditasi:   "TERAKREDITASI",                        // isi akreditasi: A / B / C
   status:       "Negeri",
 };
 
