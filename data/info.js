@@ -16,6 +16,8 @@ const INFO_SEKOLAH = {
   tahun_berdiri:"1982",                         // isi tahun berdiri
   akreditasi:   "TERAKREDITASI",                        // isi akreditasi: A / B / C
   status:       "Negeri",
+        // dibawah ini buat highlight atas sendiri!!!
+  banner_pengumuman: "Penerimaan Peserta Didik Baru (PPDB) 2026/2027 akan segera dibuka! Pantau terus halaman ini.",
 };
 
 const VISI =
