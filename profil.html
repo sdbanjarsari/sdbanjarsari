@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Profil Sekolah | SD Negeri Banjarsari</title>
+<link rel="icon" href="logo.png" type="image/png"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Be+Vietnam+Pro:wght@300;400;500;600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script>
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "primary-fixed-dim":        "#ffb0d0",
+          "on-tertiary-container":    "#4d4c28",
+          "surface-container-lowest": "#ffffff",
+          "inverse-primary":          "#ffb0d0",
+          "secondary-fixed-dim":      "#84cffa",
+          "on-surface":               "#211a1c",
+          "on-primary-fixed-variant": "#762c50",
+          "surface-container-highest":"#eddfe2",
+          "background":               "#fff8f8",
+          "on-secondary-fixed":       "#001e2c",
+          "tertiary-fixed-dim":       "#cbc99a",
+          "inverse-surface":          "#372e31",
+          "secondary":                "#00668a",
+          "on-secondary-container":   "#005b7c",
+          "inverse-on-surface":       "#fcedf0",
+          "on-surface-variant":       "#524348",
+          "tertiary-container":       "#bfbd8f",
+          "secondary-container":      "#87d2fd",
+          "surface-container":        "#f9eaee",
+          "on-secondary-fixed-variant":"#004c69",
+          "surface-tint":             "#924469",
+          "surface-container-low":    "#fff0f3",
+          "primary-container":        "#fe9ec7",
+          "on-primary-container":     "#7a3055",
+          "primary-fixed":            "#ffd8e6",
+          "outline-variant":          "#d7c1c8",
+          "surface-bright":           "#fff8f8",
+          "on-tertiary":              "#ffffff",
+          "on-secondary":             "#ffffff",
+          "surface-variant":          "#eddfe2",
+          "on-tertiary-fixed":        "#1d1d01",
+          "tertiary-fixed":           "#e8e5b4",
+          "error-container":          "#ffdad6",
+          "on-primary-fixed":         "#3d0023",
+          "on-error":                 "#ffffff",
+          "surface":                  "#fff8f8",
+          "secondary-fixed":          "#c4e7ff",
+          "on-primary":               "#ffffff",
+          "on-error-container":       "#93000a",
+          "on-tertiary-fixed-variant":"#494824",
+          "tertiary":                 "#61603a",
+          "surface-container-high":   "#f3e5e8",
+          "surface-dim":              "#e5d6da",
+          "primary":                  "#924469",
+          "on-background":            "#211a1c",
+          "outline":                  "#857278",
+          "error":                    "#ba1a1a"
+        },
+        borderRadius: {
+          DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"
+        },
+        fontFamily: {
+          display: ["Plus Jakarta Sans", "sans-serif"],
+          body:    ["Be Vietnam Pro", "sans-serif"]
+        }
+      }
+    }
+  }
+</script>
+<style>
+  .material-symbols-outlined {
+    font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;
+    vertical-align: middle;
+  }
+
+  /* Mobile menu */
+  .mob-menu { display: none; }
+  .mob-menu.open { display: flex; }
+
+  /* Teacher photo */
+  .teacher-img { transition: transform .5s ease; }
+  .teacher-img:hover { transform: scale(1.05); }
+
+  /* Smooth scroll */
+  html { scroll-behavior: smooth; }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: #fff0f3; }
+  ::-webkit-scrollbar-thumb { background: #fe9ec7; border-radius: 99px; }
+
+  .nav-btn { display: inline-block; color: #524348; }
+  .nav-btn:hover { background: #fff0f3; color: #924469; }
+  .nav-btn.active { background: #ffd8e6; color: #924469; }
+  .mob-nav-btn { display: block; color: #524348; }
+  .mob-nav-btn:hover { background: #fff0f3; color: #924469; }
+</style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-primary-container selection:text-on-primary-container">
+
+<!-- ══ ANNOUNCEMENT BAR ══ -->
+<div class="bg-primary-container text-on-primary-container py-2 text-center text-xs font-semibold font-display tracking-wide" id="ann-bar">
+  Penerimaan Peserta Didik Baru (PPDB) 2024 akan segera dibuka! Pantau terus halaman ini.
+</div>
+
+<!-- ══ NAVBAR ══ -->
+<header class="sticky top-0 z-50 bg-background/85 backdrop-blur-md transition-shadow" id="main-header">
+  <nav class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
+    <!-- Brand -->
+    <a href="index.html" class="flex items-center gap-3 group">
+      <img src="logo.png" alt="Logo" class="w-9 h-9 object-contain rounded-lg bg-primary-container/40 p-1"
+           onerror="this.style.display='none';document.getElementById('nav-logo-fb').style.display='flex'"/>
+      <div id="nav-logo-fb" class="hidden w-9 h-9 bg-primary-container rounded-lg items-center justify-center text-primary font-display font-bold text-sm">SD</div>
+      <span class="font-display font-extrabold text-lg text-primary leading-tight hidden sm:block">SD Negeri<br/><span class="text-on-surface text-base font-semibold">Banjarsari</span></span>
+    </a>
+
+    <!-- Desktop nav links -->
+    <div class="hidden md:flex gap-1 items-center">
+      <a href="index.html" id="nav-beranda" class="nav-btn px-4 py-2 rounded-full text-sm font-display font-semibold transition-all">Beranda</a>
+      <a href="profil.html"  id="nav-profil"  class="nav-btn active px-4 py-2 rounded-full text-sm font-display font-semibold transition-all">Profil Sekolah</a>
+      <a href="alumni.html"  id="nav-alumni"  class="nav-btn px-4 py-2 rounded-full text-sm font-display font-semibold transition-all">Alumni</a>
+    </div>
+
+    <div class="flex items-center gap-3">
+      <button onclick="bukaPendaftaran()" class="bg-primary text-on-primary px-5 py-2.5 rounded-full font-display font-bold text-sm hover:scale-105 active:scale-95 transition-all shadow-lg shadow-primary/20">
+        Pendaftaran
+      </button>
+      <!-- Hamburger -->
+      <button class="md:hidden p-2 rounded-lg hover:bg-surface-container transition" onclick="toggleMenu()">
+        <span class="material-symbols-outlined text-on-surface">menu</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div class="mob-menu flex-col gap-1 px-6 pb-4 border-t border-outline-variant bg-background" id="mob-menu">
+    <a href="index.html" class="mob-nav-btn text-left px-4 py-3 rounded-xl text-sm font-display font-semibold w-full transition-all">🏠 Beranda</a>
+    <a href="profil.html"  class="mob-nav-btn text-left px-4 py-3 rounded-xl text-sm font-display font-semibold w-full transition-all">📋 Profil Sekolah</a>
+    <a href="alumni.html"  class="mob-nav-btn text-left px-4 py-3 rounded-xl text-sm font-display font-semibold w-full transition-all">🎓 Alumni</a>
+    <button onclick="bukaPendaftaran();toggleMenu()"   class="bg-primary text-on-primary text-left px-4 py-3 rounded-xl text-sm font-display font-bold w-full mt-1">📝 Pendaftaran</button>
+  </div>
+</header>
+
+<!-- Page hero -->
+<div class="bg-primary text-on-primary text-center py-16 px-6 relative overflow-hidden">
+  <div class="absolute top-0 left-0 w-64 h-64 bg-white/10 rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl"></div>
+  <p class="text-xs font-display font-bold uppercase tracking-widest opacity-75 mb-3">Mengenal Lebih Dekat</p>
+  <h1 class="font-display font-extrabold text-3xl md:text-5xl">Profil Sekolah</h1>
+  <p class="mt-3 opacity-75 text-sm">Informasi lengkap SD Negeri Banjarsari</p>
+</div>
+
+<!-- Info Grid -->
+<section class="bg-surface-container-low py-20">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+      <!-- Info Umum -->
+      <div class="bg-surface-container-lowest p-8 rounded-2xl border-2 border-primary-fixed-dim hover:border-primary transition-colors">
+        <span class="material-symbols-outlined text-primary text-4xl mb-4 block">badge</span>
+        <h3 class="font-display font-bold text-xl mb-4">Informasi Umum</h3>
+        <div class="space-y-3">
+          <div class="flex justify-between items-center border-b border-outline-variant pb-2">
+            <span class="text-xs font-display font-bold text-on-surface-variant uppercase">NPSN</span>
+            <span class="font-display font-bold text-primary" id="pi-npsn">–</span>
+          </div>
+          <div class="flex justify-between items-center border-b border-outline-variant pb-2">
+            <span class="text-xs font-display font-bold text-on-surface-variant uppercase">Status</span>
+            <span class="font-display font-bold text-primary" id="pi-status">–</span>
+          </div>
+          <div class="flex justify-between items-center border-b border-outline-variant pb-2">
+            <span class="text-xs font-display font-bold text-on-surface-variant uppercase">Akreditasi</span>
+            <span class="font-display font-bold text-primary" id="pi-akred">–</span>
+          </div>
+          <div class="flex justify-between items-center border-b border-outline-variant pb-2">
+            <span class="text-xs font-display font-bold text-on-surface-variant uppercase">Tahun Berdiri</span>
+            <span class="font-display font-bold text-primary" id="pi-tahun">–</span>
+          </div>
+          <div class="flex justify-between items-start">
+            <span class="text-xs font-display font-bold text-on-surface-variant uppercase mt-1">Alamat</span>
+            <span class="font-display font-semibold text-primary text-right text-sm max-w-[180px]" id="pi-alamat">–</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sejarah -->
+      <div class="md:col-span-2 bg-secondary-container text-on-secondary-container p-8 rounded-2xl flex flex-col justify-between group overflow-hidden relative">
+        <div class="relative z-10">
+          <h3 class="font-display font-bold text-xl mb-4">Sejarah Singkat</h3>
+          <p class="text-base leading-relaxed max-w-2xl" id="pi-sejarah">–</p>
+        </div>
+        <span class="material-symbols-outlined absolute -bottom-10 -right-10 text-[200px] opacity-10 group-hover:rotate-12 transition-transform duration-700">history_edu</span>
+      </div>
+
+      <!-- Visi -->
+      <div class="bg-tertiary-container text-on-tertiary-container p-8 rounded-2xl">
+        <h3 class="font-display font-bold text-xl mb-4 flex items-center gap-2">
+          <span class="material-symbols-outlined">visibility</span> Visi
+        </h3>
+        <p class="italic leading-relaxed" id="pi-visi">–</p>
+      </div>
+
+      <!-- Misi -->
+      <div class="md:col-span-2 bg-surface-container-highest p-8 rounded-2xl">
+        <h3 class="font-display font-bold text-xl mb-5 flex items-center gap-2">
+          <span class="material-symbols-outlined">rocket_launch</span> Misi Kami
+        </h3>
+        <ul class="grid grid-cols-1 md:grid-cols-2 gap-4" id="pi-misi"></ul>
+      </div>
+
+      <!-- Kontak -->
+      <div class="md:col-span-3 bg-surface-container-lowest p-8 rounded-2xl border border-outline-variant">
+        <h3 class="font-display font-bold text-xl mb-5 flex items-center gap-2">
+          <span class="material-symbols-outlined text-primary">contact_phone</span> Kontak Sekolah
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="flex items-start gap-3">
+            <div class="w-10 h-10 bg-primary-fixed rounded-xl flex items-center justify-center flex-shrink-0">
+              <span class="material-symbols-outlined text-on-primary-fixed text-lg">phone</span>
+            </div>
+            <div>
+              <p class="text-xs font-display font-bold uppercase text-on-surface-variant mb-1">Telepon / WA</p>
+              <p class="font-display font-semibold text-on-surface" id="pi-telp">–</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="w-10 h-10 bg-secondary-fixed rounded-xl flex items-center justify-center flex-shrink-0">
+              <span class="material-symbols-outlined text-on-secondary-fixed text-lg">mail</span>
+            </div>
+            <div>
+              <p class="text-xs font-display font-bold uppercase text-on-surface-variant mb-1">Email</p>
+              <p class="font-display font-semibold text-on-surface" id="pi-email">–</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="w-10 h-10 bg-tertiary-fixed rounded-xl flex items-center justify-center flex-shrink-0">
+              <span class="material-symbols-outlined text-on-tertiary-fixed text-lg">location_on</span>
+            </div>
+            <div>
+              <p class="text-xs font-display font-bold uppercase text-on-surface-variant mb-1">Lokasi</p>
+              <p class="font-display font-semibold text-on-surface text-sm" id="pi-lokasi">–</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Guru & Staff -->
+<section class="bg-surface-container py-20">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex items-center justify-between mb-12">
+      <div>
+        <p class="text-xs font-display font-bold uppercase tracking-widest text-primary mb-2">Sumber Daya Manusia</p>
+        <h2 class="font-display font-bold text-3xl text-on-surface mb-2">Guru &amp; Tenaga Kependidikan</h2>
+        <p class="text-on-surface-variant">Dibimbing oleh para pendidik profesional yang berpengalaman.</p>
+      </div>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6" id="guru-grid">
+      <!-- filled by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- UNIFIED RICH FOOTER -->
+<footer class="bg-surface-container-low">
+  <div class="max-w-7xl mx-auto px-6 py-16">
+    <div class="flex flex-col md:flex-row justify-between gap-12 mb-12">
+      <div class="max-w-xs">
+        <div class="font-display font-extrabold text-xl text-primary mb-3" id="ft-nama">SD Negeri Banjarsari</div>
+        <p class="text-on-surface-variant text-sm leading-relaxed" id="ft-alamat">Banjarsari, Kec. Buduran, Kabupaten Sidoarjo, Jawa Timur 61252</p>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+        <div class="flex flex-col gap-3">
+          <h5 class="text-xs font-display font-bold uppercase tracking-widest text-secondary">Sekolah</h5>
+          <a href="profil.html" class="text-on-surface-variant hover:text-secondary text-sm text-left transition-colors">Tentang Kami</a>
+          <a href="profil.html" class="text-on-surface-variant hover:text-secondary text-sm text-left transition-colors">Visi & Misi</a>
+          <a href="profil.html" class="text-on-surface-variant hover:text-secondary text-sm text-left transition-colors">Guru & Staf</a>
+        </div>
+        <div class="flex flex-col gap-3">
+          <h5 class="text-xs font-display font-bold uppercase tracking-widest text-secondary">Akademik</h5>
+          <a href="profil.html" class="text-on-surface-variant hover:text-secondary text-sm text-left transition-colors">Kurikulum</a>
+          <a href="alumni.html" class="text-on-surface-variant hover:text-secondary text-sm text-left transition-colors">Alumni</a>
+          <button onclick="bukaPendaftaran()" class="text-on-surface-variant hover:text-secondary text-sm text-left transition-colors">Pendaftaran</button>
+        </div>
+        <div class="flex flex-col gap-3">
+          <h5 class="text-xs font-display font-bold uppercase tracking-widest text-secondary">Kontak</h5>
+          <span class="text-on-surface-variant text-sm" id="ft-telp">–</span>
+          <span class="text-on-surface-variant text-sm" id="ft-email">–</span>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-outline-variant pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="text-on-surface-variant text-sm">NPSN: <span id="ft-npsn">20501869</span> &nbsp;·&nbsp; Akreditasi: <span id="ft-akred2">A</span></p>
+      <p class="text-on-surface-variant text-xs">© <span class="yr-f"></span> SD Negeri Banjarsari. Nurturing Tomorrow's Leaders.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ══ POPUP PENDAFTARAN ══ -->
+<div id="popup-overlay" class="hidden fixed inset-0 bg-black/40 z-[9998] backdrop-blur-sm" onclick="tutupPopup()"></div>
+<div id="popup-box" class="hidden fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[9999] bg-background rounded-[2rem] p-10 max-w-sm w-[90%] text-center shadow-2xl">
+  <div class="w-20 h-20 bg-primary-container rounded-full flex items-center justify-center mx-auto mb-6">
+    <span class="material-symbols-outlined text-on-primary-container text-4xl">app_registration</span>
+  </div>
+  <h3 class="font-display font-extrabold text-2xl text-on-surface mb-3">Pendaftaran Belum Dibuka</h3>
+  <p class="text-on-surface-variant text-sm leading-relaxed mb-8">Formulir pendaftaran online belum tersedia saat ini atau sudah ditutup. Silakan hubungi pihak sekolah untuk informasi lebih lanjut.</p>
+  <button onclick="tutupPopup()" class="bg-primary text-on-primary px-8 py-3 rounded-full font-display font-bold text-sm hover:scale-105 transition-all">
+    Oke, Mengerti
+  </button>
+</div>
+
+<!-- ══ DATA FILES ══ -->
+<script src="data/info.js"></script>
+<script src="data/guru.js"></script>
+
+<script>
+  const LINK_PENDAFTARAN = null;
+
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.yr-f').forEach(el => el.textContent = new Date().getFullYear());
+    fillInfo();
+    fillGuru();
+  });
+
+  function toggleMenu() {
+    document.getElementById('mob-menu').classList.toggle('open');
+  }
+
+  function bukaPendaftaran() {
+    if (LINK_PENDAFTARAN) {
+      window.open(LINK_PENDAFTARAN, '_blank');
+    } else {
+      document.getElementById('popup-overlay').classList.remove('hidden');
+      document.getElementById('popup-box').classList.remove('hidden');
+    }
+  }
+  function tutupPopup() {
+    document.getElementById('popup-overlay').classList.add('hidden');
+    document.getElementById('popup-box').classList.add('hidden');
+  }
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') tutupPopup(); });
+
+  function fillInfo() {
+    const I = INFO_SEKOLAH;
+
+    // Announcement Bar
+    const annBar = document.getElementById('ann-bar');
+    if (annBar) {
+      if (I.banner_pengumuman && I.banner_pengumuman.trim() !== "") {
+        annBar.textContent = I.banner_pengumuman;
+        annBar.style.display = 'block';
+      } else {
+        annBar.style.display = 'none';
+      }
+    }
+
+    // Footer
+    document.getElementById('ft-nama').textContent    = I.nama    || 'SD Negeri Banjarsari';
+    document.getElementById('ft-alamat').textContent  = I.alamat  || '–';
+    document.getElementById('ft-telp').textContent    = I.telp    || '–';
+    document.getElementById('ft-email').textContent   = I.email   || '–';
+    document.getElementById('ft-npsn').textContent    = I.npsn    || '–';
+    document.getElementById('ft-akred2').textContent  = I.akreditasi || '–';
+
+    // Profil page
+    document.getElementById('pi-npsn').textContent   = I.npsn          || '(belum diisi)';
+    document.getElementById('pi-status').textContent  = I.status        || '–';
+    document.getElementById('pi-akred').textContent   = I.akreditasi    || '(belum diisi)';
+    document.getElementById('pi-tahun').textContent   = I.tahun_berdiri || '(belum diisi)';
+    document.getElementById('pi-alamat').textContent  = I.alamat        || '–';
+    document.getElementById('pi-telp').textContent    = I.telp          || '(belum diisi)';
+    document.getElementById('pi-email').textContent   = I.email         || '(belum diisi)';
+    document.getElementById('pi-lokasi').textContent  = [I.kecamatan, I.kabupaten, I.provinsi].filter(Boolean).join(', ') || '–';
+    document.getElementById('pi-sejarah').textContent = SEJARAH         || '–';
+    document.getElementById('pi-visi').textContent    = VISI            || '–';
+
+    document.getElementById('pi-misi').innerHTML = MISI.map(m => `
+      <li class="flex items-start gap-3">
+        <span class="material-symbols-outlined text-primary flex-shrink-0">check_circle</span>
+        <span class="text-sm leading-relaxed">${m}</span>
+      </li>`).join('');
+  }
+
+  function fillGuru() {
+    document.getElementById('guru-grid').innerHTML = GURU.map(g => {
+      const init = g.nama.split(' ').map(w => w[0]).join('').substring(0, 2).toUpperCase();
+      const avatar = (g.foto && g.foto.trim())
+        ? `<div class="w-20 h-20 rounded-2xl overflow-hidden border-4 border-white shadow-md mx-auto mb-4">
+             <img class="teacher-img w-full h-full object-cover" src="${g.foto}" alt="${g.nama}"
+                  onerror="this.parentElement.outerHTML='<div class=&quot;w-20 h-20 rounded-2xl bg-primary-container flex items-center justify-center mx-auto mb-4 border-4 border-white shadow-md&quot;><span class=&quot;font-display font-bold text-lg text-primary&quot;>${init}</span></div>'"/>
+           </div>`
+        : `<div class="w-20 h-20 rounded-2xl bg-primary-container flex items-center justify-center mx-auto mb-4 border-4 border-white shadow-md">
+             <span class="font-display font-bold text-lg text-primary">${init}</span>
+           </div>`;
+      return `<div class="flex flex-col items-center text-center p-5 bg-surface-container-lowest rounded-2xl border border-outline-variant hover:-translate-y-1 hover:shadow-lg transition-all">
+        ${avatar}
+        <h4 class="font-display font-bold text-sm text-on-surface mb-1">${g.nama}</h4>
+        <p class="text-xs font-display font-semibold text-primary uppercase tracking-wide">${g.jabatan}</p>
+      </div>`;
+    }).join('');
+  }
+
+  window.addEventListener('scroll', () => {
+    document.getElementById('main-header').classList.toggle('shadow-md', window.scrollY > 20);
+  });
+</script>
+</body>
+</html>
